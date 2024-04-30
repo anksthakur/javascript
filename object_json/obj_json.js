@@ -143,13 +143,38 @@
 // console.log(user.id);
 // 13
 
-let obj = {
-    name :"Anup",
-    lastName:"Thakur"
+// let obj = {
+//     name :"Anup",
+//     lastName:"Thakur"
+// }
+// // console.log(obj.name);
+// // Anup
+// //baar baar hume obj na linke pde uske ley
+// let {name,lastName} =  obj;
+// // console.log(name)
+// console.log(...name,...lastName)
+
+const obj = {
+    fullName : "anup",
+    age : 28,
+    email : "anup@gmail.com"
 }
-// console.log(obj.name);
-// Anup
-//baar baar hume obj na linke pde uske ley
-let {name,lastName} =  obj;
-// console.log(name)
-console.log(...name,...lastName)
+obj.greeting = function (){
+    return (" Hello user welcome to app")
+}
+console.log(obj.greeting());
+obj.greetingUser = function (){
+    return (` Hello ${this.fullName} welcome to app `)
+}
+console.log(obj.greetingUser())
+console.log(obj.fullName);
+// const {fullName} = obj; // de-structure kiya
+// console.log(fullName);
+// const { fullName:name} = obj; // full name ko bhi short kar deya 
+// console.log(name);
+// console.log(Object.keys(obj));
+// console.log(Object.values(obj));
+
+obj.fullName = "Kanu";
+console.log(obj);
+// Object.freeze(obj);
