@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body style="background-color: blueviolet;">
+    <div>
+        <ul id="img">
+            <li><img width="400px" src="n.jpeg" alt="self1" id="self1"/></li>
+            <li><img width="400px" src="a.jpeg" alt="self2" id="self2"/></li>
+            <!-- onclick avoid krna hota hai jab app ka scale bda hota hai -->
+            <li><a style="color: blue" href="https://www.instagram.com/thakuranks/" id="instagram">instagram</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+//     // onClick features kam deta hai
+//     // document.getElementById('self').onclick=function(){
+//     //     alert("self clicked")
+//     // }
+//     // document.getElementById('self').addEventListener('click',function(){
+//     //     window.location.href = "https://www.instagram.com/thakuranks/"
+//         // alert("self image clicked")
+//         document.getElementById('self1').addEventListener('click',function(e){
+// console.log("self 1 clicked")
+//     })
+
+//     document.getElementById('self2').addEventListener('click',function(e){
+// console.log("self 2 clicked")
+//     })
+
+//     document.getElementById('instagram').addEventListener('click',function(e){
+//         // instagram pe click krne pe ye navigate nhi krega
+//         e.preventDefault()
+//         console.log("instagram clicked")
+//     },false)
+
+// image ke click pe image he gayab ho jaye
+// abhi id dek ke kar rhe hai agar 200 image ho gyi to kaise krenge
+
+document.querySelector('#img').addEventListener('click',function(e){
+    // .target krne se img ki puri description aa jayegi aur isse khali img hat jayegi 
+    //lekin li reh jayega to hume iska parentNode bhi htana hoga
+    // abhi tak img aur li select kar leya
+console.log(e.target.parentNode);
+if (e.target.tagName === 'IMG') {
+    // remove krne ke ley
+let removeItem = e.target.parentNode
+// ise img to chli jayegi lekin humne agar click kiya ul pe sari he img chli jayengi to hum if else use kar rhe hai
+//1st way
+removeItem.remove()
+}
+
+//2nd way
+// removeItem.parentNode.removeChild(removeItem)
+})
+
+</script>
+</html>
