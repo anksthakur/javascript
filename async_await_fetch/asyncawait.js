@@ -11,13 +11,31 @@
 // 1 memory heap = memory allocation hota hai isme
 //2 call stack = jab bhi code execute hota hai uhska call ctack bnta hai
 
-async function getAllUser (){
-    try {
-        const response = await fetch("https://dummyjson.com/carts");
-        const data = await response.json();
-        console.log(data);
-    } catch (error) {
-        console.log(error)
-    }
-}
-getAllUser();
+// async function getAllUser (){
+//     try {
+//         const response = await fetch("https://dummyjson.com/carts");
+//         const data = await response.json();
+//         console.log(data);
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+// getAllUser();
+
+
+// async function getUsers(){
+//     try {
+//         const response = await fetch("https://dummyjson.com/carts")
+//     const data = await response.json();
+//     console.log(data);
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+// getUsers();
+
+console.log("one");
+setTimeout(function(){
+console.log("two")
+},2000)
+console.log(three);

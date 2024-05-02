@@ -1,16 +1,17 @@
 // // promise create krna
 // promise ek fun leta hai fun ke 2 part hote hai resolve and reject
-// const promiseOne = new Promise(function(resolve,reject){
-//     // do any async task
-//     // db calls , cryptography , network
-//     setTimeout(function(){
-//         console.log("async task is complete")
-//         resolve()
-//     },2000)
-// })
-// promiseOne.then(function(){
-//     console.log("promise consumed");
-// })
+
+const promiseOne = new Promise(function(resolve,reject){
+    // do any async task
+    // db calls , cryptography , network
+    setTimeout(function(){
+        console.log("async task is complete")
+        resolve()
+    },2000)
+})
+promiseOne.then(function(){
+    console.log("promise consumed");
+})
 
 // new Promise (function(resolve,reject){// resolve directly connected hai .then ke sath
 //     setTimeout((function(){
@@ -56,7 +57,8 @@
 
 //promise ko handle krne ke ley async await
 //wait krta hai kaam ke hone ka jab kaam ho jata hai tbhi aage bdta hai nhi to bhi pe error de deta hai
-// jaise khi database connection huya he nhi to aage bdna he nhi case m
+// jaise khi database connection huya he nhi to aage bdna he nhi uhs case m
+
 // const data = new Promise(function(resolve,reject){
 //     setTimeout(function(){
 //         // ye error throw kiya hai true 
@@ -97,16 +99,16 @@
 
 
 // .then and .catch syntx ke through
-fetch("https://dummyjson.com/products")
-// response promise m aayega to uhsko handle krne ke ley .then
-.then((response)=>{
-    // return kiya response.json m
-return response.json()
-})
-// isko handle krne ke ley response ko
-// isme data upar wale .then se aayega uhsko name deya data
-.then((data)=>{
-    console.log(data);
-})
-// error bhi aa skta hai uhsko handle krne ke ley .catch
-.catch((error)=>console.log(error))
+// fetch("https://dummyjson.com/products")
+// // response promise m aayega to uhsko handle krne ke ley .then
+// .then((response)=>{
+//     // return kiya response.json m
+// return response.json()
+// })
+// // isko handle krne ke ley response ko
+// // isme data upar wale .then se aayega uhsko name deya data
+// .then((data)=>{
+//     console.log(data);
+// })
+// // error bhi aa skta hai uhsko handle krne ke ley .catch
+// .catch((error)=>console.log(error))

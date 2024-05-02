@@ -30,17 +30,35 @@
 
     // hum ek call back function m callback ko bhi call kar skte hai
 
-    function outer (inner){
-        // Call the callback function
-            inner();
+    // function outer (inner){
+    //     // Call the callback function
+    //         inner();
             
-        }
-        function inner (){
-            console.log("call back function is executed")
-            inner2();
-        }
-        function inner2(){
-            console.log("call back function 2 is executed")
-        }
-        // Passing the callback function to the higher-order function
-        outer(inner);
+    //     }
+    //     function inner (){
+    //         console.log("call back function is executed")
+    //         inner2();
+    //     }
+    //     function inner2(){
+    //         console.log("call back function 2 is executed")
+    //     }
+    //     // Passing the callback function to the higher-order function
+    //     outer(inner);
+
+    // function outer(callback){
+    //     inner1();
+    //     function inner1(){
+    //         console.log("inner function")
+    //     }
+    // }
+    // outer();
+
+    // call back use hota hai eg waiting for user input like name 
+    function askName(greetUser){
+        let name = prompt("what is your name");
+        greetUser(name);
+    }
+    function greetUser(name){
+        console.log(name + "welcome to our website")
+    }
+    askName(greetUser);

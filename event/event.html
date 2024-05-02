@@ -37,25 +37,41 @@
 //         console.log("instagram clicked")
 //     },false)
 
-// image ke click pe image he gayab ho jaye
+// image ke click pe image he delete ho jaye ya hide ho jaye
 // abhi id dek ke kar rhe hai agar 200 image ho gyi to kaise krenge
 
-document.querySelector('#img').addEventListener('click',function(e){
-    // .target krne se img ki puri description aa jayegi aur isse khali img hat jayegi 
-    //lekin li reh jayega to hume iska parentNode bhi htana hoga
-    // abhi tak img aur li select kar leya
-console.log(e.target.parentNode);
-if (e.target.tagName === 'IMG') {
-    // remove krne ke ley
-let removeItem = e.target.parentNode
-// ise img to chli jayegi lekin humne agar click kiya ul pe sari he img chli jayengi to hum if else use kar rhe hai
-//1st way
-removeItem.remove()
-}
+// document.querySelector('#img').addEventListener('click',function(e){
+//     // .target krne se img ki puri description aa jayegi aur isse khali img hat jayegi 
+//     //lekin li reh jayega to hume iska parentNode bhi htana hoga
+//     // abhi tak img aur li select kar leya
+// console.log(e.target.parentNode);
+// if (e.target.tagName === 'IMG') {
+//     // remove krne ke ley
+// let removeItem = e.target.parentNode
+// // ise img to chli jayegi lekin humne agar click kiya ul pe sari he img chli jayengi to hum if else use kar rhe hai
+// //1st way
+// removeItem.remove()
+// }
 
-//2nd way
-// removeItem.parentNode.removeChild(removeItem)
-})
+// //2nd way
+// // removeItem.parentNode.removeChild(removeItem)
+// })
 
+</script>
+<script>
+    // function askName(greetUser){
+    //     let name = prompt("what is your name");
+    //     greetUser(name);
+    // }
+    // function greetUser(name){
+    //     console.log(name + "welcome to our website")
+    // }
+    // askName(greetUser);
+
+console.log("one");
+setTimeout(function(){
+console.log("two")
+},2000)// 2 sec baad print hoga itne m one or three print ho jayenge
+console.log("three");
 </script>
 </html>

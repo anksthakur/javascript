@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: blue;">
+            <h1 style="text-align: center;">Hello Div</h1>
+</body>
+<script>
+// console.log(window);
+// navigator - oncontextmenu
+window.addEventListener('contextmenu',function(e){
+    e.preventDefault();
+    // assume kiya x , y
+    let x = e.clientX;
+    let y = e.clientY;
+    if(x > window.innerWidth/2){
+        console.log('you clicked on right side')
+    }else{
+        console.log('you clicked on left side')
+    }
+})
+</script>
+</html>
