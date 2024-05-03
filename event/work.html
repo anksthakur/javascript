@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="workDiv" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgb(21, 244, 21);align-items: center;height: 200px;width: 200px;">
+        <h1 style="text-align: center;">rect() Work</h1>
+    </div>
+    <script>
+        let div = document.getElementById('workDiv');
+        function getPositionOfXy(x,y){
+            let rect = div.getBoundingClientRect();
+            // rectangle sides 
+            let divX = x - rect.left;
+            let divY = y - rect.top;
+            let divWidth = rect.width;
+            let divHeight = rect.height;
+            // left area
+            if(divX < divWidth/3){
+                if(divY < divWidth / 3){
+                    console.log("Top left");
+                }else if(divY > 2 * divHeight / 3){
+                    console.log("Bottom Left")
+                }else{
+                    console.log("Left")
+                }
+                // right area
+            }else if(divX > 2 * divWidth / 3){   
+                if(divY < divHeight / 3){
+                    console.log("Top Right")
+                }else if(divY > 2 * divHeight / 3){
+                    console.log("Bottom Right")
+                }else{
+                    console.log("Right")
+                }
+            // middle area
+            }else{
+                if(divY < divHeight / 3){
+                    console.log("Top")
+                }else if (divY > 2 * divHeight / 3){
+                    console.log("Bottom")
+                }else{
+                    console.log("Middle")
+                }
+            }
+        }
+            window.addEventListener('click', function(e){
+            let x = e.clientX;
+            let y = e.clientY;
+            getPositionOfXy(x, y);
+        });
+    </script>
+</body>
+</html>
