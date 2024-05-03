@@ -7,20 +7,62 @@
 </head>
 <body style="background-color: blue;">
             <h1 style="text-align: center;">Hello Div</h1>
+            <button onClick="openWindow()">Open Window</button> 
+            <button onClick="sameTab()">Open in same Tab</button>
+            <button onClick="newBrowser()">Open in new Browser</button>
+            <button onClick="closeWindow()">Close win for new browser</button>
+
+            <script>
+                // console.log(window);
+                // // navigator - oncontextmenu
+                // window.addEventListener('contextmenu',function(e){
+                //     e.preventDefault();
+                //     //  x for horizontal  , y for vertical
+                //     let x = e.clientX;
+                //     let y = e.clientY;
+                //     if(x > window.innerWidth/2){
+                //         console.log('you clicked on right side')
+                //     }else{
+                //         console.log('you clicked on left side')
+                //     }
+                //     if(y > window.innerHeight/2){
+                //         console.log('you clicked on bottom side')
+                //     }else{
+                //         console.log('you clicked on top side')
+                //     }
+                // })
+
+                //javascript function to open new window and close
+                // ab he window ko close krna hai jo new open kri hai
+                // to ek global variable bnana hai uhsme sote krna hai values ko
+                
+                var myWindow;
+                function openWindow(){
+                    //kya open ho jab new window open ho to url daal deya
+                    // ab isme window.open ko store kiya
+                  window.open("https://www.instagram.com/thakuranks/");
+                }
+
+                //agar hum chahte hai same he page pe open ho
+                // open window in same page ( "url","_parent" )
+                function sameTab(){
+                    window.open("https://www.instagram.com/thakuranks","_parent");
+                }
+                // agar hum chate hai new browser ","iske baad aage ka kaam krna hai
+                function newBrowser() {
+            myWindow = window.open("https://www.instagram.com/thakuranks", "", "width=500,height=500,left=50,top=50");
+        }
+                
+                // close krne ke ley
+                function closeWindow() {
+                     if (myWindow) {
+                        myWindow.close();
+                    } else {
+                         console.log("No window to close");
+                        }
+                    }
+
+                </script>
 </body>
-<script>
-// console.log(window);
-// navigator - oncontextmenu
-window.addEventListener('contextmenu',function(e){
-    e.preventDefault();
-    // assume kiya x , y
-    let x = e.clientX;
-    let y = e.clientY;
-    if(x > window.innerWidth/2){
-        console.log('you clicked on right side')
-    }else{
-        console.log('you clicked on left side')
-    }
-})
-</script>
+
 </html>
