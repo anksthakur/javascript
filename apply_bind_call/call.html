@@ -61,11 +61,12 @@ let teacher = {
     age:29
 }
 
-// is fun ko hum bhar bhi rak skte hai aur call kr skte hai
+// is function ko hum bhar bhi rak skte hai aur call kr skte hai
 function getEmail(){
-    return `${this.firstName}.${this.lastName}@insta.com`
+    return this.email = `${this.firstName}.${this.lastName}@insta.com`
 }
 console.log(getEmail.call(teacher));
+console.log(teacher);
 //console.log(getEmail.call(student));
 
 // call (kisko call krni hai)
