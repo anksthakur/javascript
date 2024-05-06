@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">button</button>
+    <script>
+        //The event loop constantly checks for events such as user interactions (like clicks), timer expirations, or network responses.
+        document.getElementById("button").addEventListener("click", function onClick() {
+            // ye function ko tab execute krega jab button pe click hoga
+            setTimeout(function one() {
+                console.log("Button is clicked");
+            }, 1000);
+        });
+        setTimeout(function two(){
+            console.log("click the button")
+        },1000)
+        // ye sync task hai ye immediately run hoga
+        console.log("welcome to event loop")
+        // welcome to event loop
+        //click the button
+        //Button is clicked
+    </script>
+</body>
+</html>

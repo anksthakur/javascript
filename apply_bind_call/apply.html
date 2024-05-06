@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let student = {
+        firstName:"anup",
+        lastName:"thakur"
+    }
+    let teacher = {
+        firstName:"kanu",
+        lastName:"thakur"
+    }
+    function getEmail(){
+        return `${this.firstName}.${this.lastName}@gmail.com`
+    }
+    // ek aur function hai hmare pass
+    function subject(sub1 , sub2 , sub3){
+        //return (sub1, sub2 , sub3)
+        // as a array bna ke bhi return karwa skte hai
+        return [sub1 ,sub2,sub3]
+    }
+    // apply(,[parameter]) apply hmesa parameter as a [array] he leta hai console.log(funName.apply(kisme_update_krna_hai,[parameter]))
+    console.log(subject.apply(teacher,["math","english","hindi"]));
+    // console.log(getEmail.call(teacher));
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- simple eventListner -->
+
+    <!-- <button type="button" id="btn" name="button">Kanu</button>
+<script>
+let btn = document.getElementById('btn');
+btn.addEventListener('click',function(){// click krne pe
+    alert("hello simple event")
+})
+</script> -->
+
+<!-- <button type="button" id="btn" name="button">Kanu</button>
+<script>
+    // create a custom event for hello 
+    // parameter add kiya bubble true by default it is false
+let event = new Event("hello",{bubbles:true})
+// Added an event listener to the document to listen for the "hello" event
+document.addEventListener("hello",function(){
+    alert("hello simple event")
+})
+// dispatch the hello event when button is clicked
+document.getElementById('btn').addEventListener("click",function(){
+    document.dispatchEvent(event);
+})
+
+</script> -->
+
+<!-- custom event every time when i was refresh page it will show alert -->
+<script>
+    // new custom event create kiya "hello" using event constructor
+    let event = new Event("hello",{bubbles:true});
+   
+    // eventListner lgaya event ko listen krne ke ley
+    addEventListener("hello",function(){
+        alert("hello event is dispatched")
+    })
+    // event ko dispatched kiya
+    document.dispatchEvent(event);
+</script>
+</body>
+</html>

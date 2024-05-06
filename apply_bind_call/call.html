@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // this use hota hai jo humne object bnaya hai uhski kisi bhi property ko access krne ke ley
+        // getEmail ka function baar baar declare krna pad rha hai
+        // to uhske ley hum alg se ek function bnayenge
+        // as a parameter inko accept kar leya
+        // function getEmail(firstName,lastName){
+        //     return `${firstName}.${lastName}@gmail.com`
+        //     }
+    //     let student = {
+    //         firstName:"anup",
+    //         lastName:"thakur",
+    //         age:28,
+    //         // aur function get kiya iske andar pass kiya this.
+    //         // getEmail:getEmail(this.firstName,this.lastName)
+    //         // getEmail ke anddar function bna deya 
+    //         getEmail:function(){
+    //             return `${this.firstName}.${this.lastName}@gmail.com`
+    //             }   
+    //     }
+    //     let teacher = {
+    //         firstName:"kanu",
+    //         lastName:"thakur",
+    //         age:28,
+    //         //jab hum alg se ek comman function bnate hai aur uhsko obj ke andar access krne ki kosis krte hai
+    //         // getEmail:getEmail(this.firstName,this.lastName)
+    //         getEmail:function(){
+    // return `${this.firstName}.${this.lastName}@gmail.com`
+    //        } 
+    //     }
+    //     // jab function ko call krte hai 
+    //     console.log(student.getEmail())
+    //     console.log(teacher.getEmail())
+
+        // jab property ko access krte hai
+        // console.log(student.getEmail);
+        // console.log(teacher.getEmail);
+        //alg se function bnakar uhne call krunga to undefined aayega
+        // output  undefined.undefined@gmail.com
+// undefined.undefined@gmail.com
+
+// use of call ki ek baar he function bnaya bss uhsko call krni hai 
+let student ={
+    firstName:"anup",
+    lastName:"thakur",
+    age:28,
+    // getEmail:function(){
+    //     return `${this.firstName}.${this.lastName}@insta.com`
+    // }
+}
+let teacher = {
+    firstName:"kanika",
+    lastName:"thakur",
+    age:29
+}
+
+// is fun ko hum bhar bhi rak skte hai aur call kr skte hai
+function getEmail(){
+    return `${this.firstName}.${this.lastName}@insta.com`
+}
+console.log(getEmail.call(teacher));
+//console.log(getEmail.call(student));
+
+// call (kisko call krni hai)
+// .call() krne se getEmail wala fun attach ho jayega teracher obj ke sath
+//student obj ke andar agar fun hai to
+//console.log(student.getEmail.call(teacher))
+    </script>
+</body>
+</html>

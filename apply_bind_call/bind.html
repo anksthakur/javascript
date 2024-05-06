@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let student ={
+            firstName:"anup",
+            lastName:"thakur"
+        }
+        let teacher = {
+            firstName:"kanika",
+            lastName:"thakur"
+        }
+
+        //call
+        function getEmail(){
+            //return `${this.firstName}.${this.lastName}@fb.com`
+             //email object ke andar property add ho jayegi
+            return  this.email = `${this.firstName}.${this.lastName}@fb.com`
+
+        }
+        //console.log(getEmail.call(teacher));
+
+        // apply
+        function subject(sub1,sub2){
+            return this.subject = [sub1,sub2]
+        }
+        //console.log(subject.apply(teacher,["math","IT"]))
+
+        // Bind
+        // ki abhi bind krke rkh deya jab jroort pdegi tab call kr lenge
+        let anotherTime = getEmail.bind(student);
+        //console.log(anotherTime());
+
+        // carry output
+
+        console.log(getEmail.call(teacher))
+        // console.log(teacher);
+        console.log(getEmail.call(student))
+        console.log(student);
+       //{firstName: 'kanika', lastName: 'thakur', emil: 'kanika.thakur@fb.com'}
+       console.log(subject.apply(teacher,["Math","English"]))
+       console.log(teacher)
+
+    </script>
+</body>
+</html>
