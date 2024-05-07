@@ -30,9 +30,18 @@ let obj = {
 //Object.assign({},objectNameHere)
 //let user = Object.assign({},obj) ;
 // 2nd way using shallow copy
-let user = {...obj}
-user.name = "kanu"
-console.log("Object is : ",obj);
-console.log("User is :",user)
+// let user = {...obj}
+// user.name = "kanu"
+// console.log("Object is : ",obj);
+// console.log("User is :",user)
 //Object is :  { name: 'Anup' }
 //User is : { name: 'kanu' }
+
+let x = {
+    name:"Anup"
+}
+let y = x
+console.log(x)
+console.log(y)
+y.name = "xyz"
+console.log(x)
