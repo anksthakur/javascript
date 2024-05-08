@@ -20,7 +20,7 @@ console.log(obj1);
 console.log(obj2);
 //{ name: 'Anup', pass: 'Anks' }
 //{ name: 'Anup', pass: 'Anks' }
-// obj and array m agar hum change krte hai to bo original array and obj ko he change krta hai
+// obj and array m agar hum change krte hai to bo original array and obj ko he change krke uhsme new value daal deta hai
 // call by ref m dono variable sath m kaam krte hai m means kisi ek variable ki value change kri to dono ki ho jayegi
 
 // array ke sath
