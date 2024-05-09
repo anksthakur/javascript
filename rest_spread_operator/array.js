@@ -1,5 +1,5 @@
 //rest & spread array ke sath
-// rest m jo bhi element hum pass kar rhe hai o combine ho jayenge ...
+// rest function m  jo bhi element hum pass kar rhe hai o combine ho jayenge ...
  function addNumber(a,b,...other){
 //     //console.log(other)// other number ko access krne ke ley
   return a+b ;
@@ -14,6 +14,7 @@ function getName(n1,n2,n3){
     console.log(n1,n2,n3);
 }
 //getName(name[0],name[1],name[2])// old way
+// function ko call krte time agar uhsme hum ... lga rhe hai to o obj ki item ko alag kar dega
 getName(...name);// new way
 //Anup anku kanu
 //getName(name)// other way

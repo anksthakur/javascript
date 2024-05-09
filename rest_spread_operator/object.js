@@ -12,7 +12,8 @@ let student = {
 //let {age,...rest} = student;
 // aur hum chahte hai ki sari property student ki access krni ho
 let {...rest} = student;
-//console.log(rest);
+console.log(rest);
+//{ name: 'anup', age: 28, hobbies: [ 'boxing', 'cricket' ] }
 
 // Spread
 // eg age change krni hai
@@ -22,3 +23,4 @@ let newStudent= {
     age:"29"
 }
 console.log(newStudent);
+//{ name: 'anup', age: '29', hobbies: [ 'boxing', 'cricket' ] }
