@@ -6,76 +6,76 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="myDiv" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: blueviolet;align-items: center;height: 200px;width: 200px;">
-        <h1 style="text-align: center;">Div</h1>
+    <!-- <div id="myDiv" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: blueviolet;align-items: center;height: 200px;width: 200px;"> -->
+        <!-- <h1 style="text-align: center;">Div</h1> -->
     </div>
     <script>
         // myDiv id ko div variable m store kiya
-        let div = document.getElementById('myDiv');
+        // let div = document.getElementById('myDiv');
        
 
-        // Function to get position relative to the div
-        function getPosition(x, y) {
-            // Get the position and size of the div
-            //rect() create rect on canvas (x,y,width,height)
-            //getBoundingClientRect() return krta hai DOMRect object and information provide krta hai size of an element and position (left ,right,bottom,top,x,y,width,height)
-            let rect = div.getBoundingClientRect();
-            // div ke kin hiso pe click kiya ja rha hai
-            let divX = x - rect.left;//calculates krne ke ley horizontal distance between  x and the left edge of the rectangle
-            let divY = y - rect.top;
-            let divWidth = rect.width;
-            let divHeight = rect.height;
+        // // Function to get position relative to the div
+        // function getPosition(x, y) {
+        //     // Get the position and size of the div
+        //     //rect() create rect on canvas (x,y,width,height)
+        //     //getBoundingClientRect() return krta hai DOMRect object and information provide krta hai size of an element and position (left ,right,bottom,top,x,y,width,height)
+        //     let rect = div.getBoundingClientRect();
+        //     // div ke kin hiso pe click kiya ja rha hai
+        //     let divX = x - rect.left;//calculates krne ke ley horizontal distance between  x and the left edge of the rectangle
+        //     let divY = y - rect.top;
+        //     let divWidth = rect.width;
+        //     let divHeight = rect.height;
 
-            // position check krne ke ley ki div ke kis side click ho rha hai print them in console
+        //     // position check krne ke ley ki div ke kis side click ho rha hai print them in console
 
-            // left side cover
-            // divX kya div ki width ke 1/3 se kam hai to
-            if (divX < divWidth / 3) {
-                //agar divY div ki height se 1/3 kam hai to
-                if (divY < divHeight / 3) {
-                    console.log('Top Left');
-                    //agar divY div ki height se 2/3 jyada hai to
-                } else if (divY > 2 * divHeight / 3) {
-                    console.log('Bottom Left');
-                } else {
-                    console.log('Left');
-                }
-                //divX kya div ki width ke 2/3 se jyada hai to
-                // right side cover
-            } else if (divX > 2 * divWidth / 3) {
-                // agar divY bhi div ki heigth se 1/3 se kam hai to
-                if (divY < divHeight / 3) {
-                    console.log('Top Right');
-                    //agar divY div ki height se 2/3 se jyada hai to
-                } else if (divY > 2 * divHeight / 3) {
-                    console.log('Bottom Right');
-                } else {
-                    console.log('Right');
-                }
-            } else {
-                //agar divY div ki height ke 1/3 se kam hai to
-                //middle side cover
-                if (divY < divHeight / 3) {
-                    console.log('Top');
-                    //agar divY div ki height 2/3 se jyada hai to
-                } else if (divY > 2 * divHeight / 3) {
-                    console.log('Bottom');
-                } else {
-                    console.log('Middle');
-                }
-            }
-        }
-         // khi bhi window pe click ho uhsko listen krne ke ley
-         window.addEventListener('click', function(e){
-            // Get mouse coordinates relative to window
-            let x = e.clientX;
-            let y = e.clientY;
+        //     // left side cover
+        //     // divX kya div ki width ke 1/3 se kam hai to
+        //     if (divX < divWidth / 3) {
+        //         //agar divY div ki height se 1/3 kam hai to
+        //         if (divY < divHeight / 3) {
+        //             console.log('Top Left');
+        //             //agar divY div ki height se 2/3 jyada hai to
+        //         } else if (divY > 2 * divHeight / 3) {
+        //             console.log('Bottom Left');
+        //         } else {
+        //             console.log('Left');
+        //         }
+        //         //divX kya div ki width ke 2/3 se jyada hai to
+        //         // right side cover
+        //     } else if (divX > 2 * divWidth / 3) {
+        //         // agar divY bhi div ki heigth se 1/3 se kam hai to
+        //         if (divY < divHeight / 3) {
+        //             console.log('Top Right');
+        //             //agar divY div ki height se 2/3 se jyada hai to
+        //         } else if (divY > 2 * divHeight / 3) {
+        //             console.log('Bottom Right');
+        //         } else {
+        //             console.log('Right');
+        //         }
+        //     } else {
+        //         //agar divY div ki height ke 1/3 se kam hai to
+        //         //middle side cover
+        //         if (divY < divHeight / 3) {
+        //             console.log('Top');
+        //             //agar divY div ki height 2/3 se jyada hai to
+        //         } else if (divY > 2 * divHeight / 3) {
+        //             console.log('Bottom');
+        //         } else {
+        //             console.log('Middle');
+        //         }
+        //     }
+        // }
+        //  // khi bhi window pe click ho uhsko listen krne ke ley
+        //  window.addEventListener('click', function(e){
+        //     // Get mouse coordinates relative to window
+        //     let x = e.clientX;
+        //     let y = e.clientY;
 
-            // jab click hoga to it retrives the mouse coordinates x , y aur ine getPosition m bheja jata hai
-            // getPosition fun koinner function m access krke call kiya (outer function ko inner m call kiya)
-            getPosition(x, y);
-        });
-        
+        //     // jab click hoga to it retrives the mouse coordinates x , y aur ine getPosition m bheja jata hai
+        //     // getPosition fun koinner function m access krke call kiya (outer function ko inner m call kiya)
+        //     getPosition(x, y);
+        // });
+    
     </script>
 </body>
 </html>

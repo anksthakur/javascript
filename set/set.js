@@ -1,3 +1,4 @@
+// set is a collection of unique value . it is similar to an arrary , but the values in set are unorderd and cannot be repeated
 const arr = [1,3,2,4,6,2,6,3]
 const mySet = new Set(arr);
 

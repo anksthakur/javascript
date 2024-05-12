@@ -13,7 +13,24 @@ let user = {
         age:12
     }
 }
-console.log(user.student.name || 'Thakur');
+//console.log(user.student.name || 'Thakur');
 // Thakur
-console.log(user.student.age ?? '28');
+
+//console.log(user.student.age ?? '28');
 //12
+
+// ?
+
+let users = {
+    name :"Anup",
+    address:{
+        city : "Mohali",
+    }
+}
+console.log(users.name.pincode);
+//undefine
+//console.log(users.pincode.name)
+//error
+// error na aaye uhske ley
+console.log(users.pincode?.name);
+//undefined
