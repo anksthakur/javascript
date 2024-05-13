@@ -1,4 +1,4 @@
-// factorial
+// factorial with recurssion
 // function fact(data){
 //     // data check ki 0 aaye to 1 return kar de
 //     // recursion m condition na lgaye to ye infinite loop chl DETA HAI HAI
@@ -11,7 +11,7 @@
 // return data*fact(data-1);
 // }
 // let factorial = 3;
-// console.log(fact(factorial));
+// console.log(fact(factorial));// factorial ko as a parameter get kiya
 
 
 //power
@@ -38,21 +38,21 @@
 
 // Object sort
 
-const data = [
-  {
-    name: "anup",
-    id: 1,
-  },
-  {
-    name: "cnku",
-    id: 3,
-  },
-  {
-    name: "banu",
-    id: 2,
-  },
-];
-data.sort((a,b)=>a.name - b.name);
+//const data = [
+//   {
+//     name: "anup",
+//     id: 1,
+//   },
+//   {
+//     name: "cnku",
+//     id: 3,
+//   },
+//   {
+//     name: "banu",
+//     id: 2,
+//   },
+// // ];
+// data.sort((a,b)=>a.id - b.id);
 // const newData = data.sort((n,i) => n.name - i.name);
 //const newData = data.map(key=>JSON.stringify(key)).join(',');// join use hot sari json string ko ek string m ektha krna , map new array return krega
 //  console.log(newData);
@@ -90,33 +90,71 @@ data.sort((a,b)=>a.name - b.name);
 // let y ;
 
 // Prime without recursion
-
 // let z = 20;
-// if(z < 2)
-//     console.log("it is not a prime number")
-// for (i = 2 ; i < z ; i++){
-//     if(z % i === 0){
-//     console.log("is not a Prime number");
+// let i = 1;
+// while(i <= z){
+// for(j=2; j<=20; j++){
+//   if(i%j !== 0){
+//     //console.log(i);
+//   }
 // }
-// console.log("Prime number")
+// i++
 // }
+
 
 // power
 
-let number = 5;
-let power = 3;
+// let number = 5;
+// let power = 3;
 //console.log(Math.pow(number, power))
 
 // fibonacci numbers
 
-let num = 100;
-let x = 0;
-let y = 1;
-let fn = x+y;
-while (fn < num) {
-  debugger;
-  //console.log(fn);
-  fn = x+y;
-  x=y;
-  y=fn;
+// let num = 100;
+// let x = 0;
+// let y = 1;
+// let fn = x+y;
+// while (fn < num) {
+//   //console.log(fn);
+//   fn = x+y;
+//   x=y;
+//   y=fn;
+// }
+
+
+// sort arrary
+
+// let roll = [2,5,1,40,70,3];
+// let res = roll.sort((a,b)=>{
+//   return a-b;
+// });
+
+
+// sort arrary
+
+let data = [2, 45, 23, 1];
+let newData;
+for (i = 0; i < data.length; i++) {
+for(j = i; j < data.length; j++) {
+if(data[i] > data[j]) {
+  //temp store karwa di
+newData = data[i];
+// i ki value j m swap kra di
+data[i] = data[j];
+// j ki value temp store karwa di
+data[j] = newData;
 }
+}
+}
+console.log(data);
+
+//power
+
+let enterNumber = 5;
+let enterPower  = 4;
+let output = 1 ;
+for (i = 0 ; i < enterPower ; i++){
+ output = output*enterNumber;
+}
+console.log(output)
+
