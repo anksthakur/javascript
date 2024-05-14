@@ -1,0 +1,42 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    background-color: aquamarine;
+    text-align: center;
+}
+.game{
+    margin: 30px 0px;
+}
+ .container {
+    display: flex;
+    justify-content: center;
+    
+}
+.box{
+    background-color: azure;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    margin: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    display: block;
+}
+
+#reset{
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+#msg{
+    margin-top: 15px;
+    color: red;
+    font-size: 40px;
+}
+.hide{
+    display: none;
+}

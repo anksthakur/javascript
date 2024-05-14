@@ -38,54 +38,48 @@
 
 // Object sort
 
-//const data = [
-//   {
-//     name: "anup",
-//     id: 1,
-//   },
-//   {
-//     name: "cnku",
-//     id: 3,
-//   },
-//   {
-//     name: "banu",
-//     id: 2,
-//   },
-// // ];
-// data.sort((a,b)=>a.id - b.id);
-// const newData = data.sort((n,i) => n.name - i.name);
-//const newData = data.map(key=>JSON.stringify(key)).join(',');// join use hot sari json string ko ek string m ektha krna , map new array return krega
-//  console.log(newData);
-//  let {name,id} = data;
- //console.log(data.sort())
- //console.log(data)
+const data1 = [
+  {
+    name: "anup",
+    id: 1,
+  },
+  {
+    name: "cnku",
+    id: 3,
+  },
+  {
+    name: "banu",
+    id: 2,
+  },
+];
+data1.sort((a,b)=>a.id - b.id);
+console.log(data1)
 
+ // factorial 
+//5*4*3*2*1
+function fa(f){
+    if(f==0){
+        return 1;
+}
+    return f*fa(f-1)
+}
+let factr = 5 ;
+console.log(fa(factr))
 
-
- // fac
-// function fa(f){
-//     if(f==0){
-//         return 1;
-// }
-//     return f*fa(f-1)
-// }
-// let factr = 3 ;
-//console.log(fa(factr))
-
-// prime with recursion
-
-// let i;
-// function prime(x){
-//     if (x < 2)
-//         return console.log("it is not a prime no")
-//     for( i = 2 ; i < x ; i++){
-//         if( x % i  === 0){
-//             return console.log(" it is not a prime no")
-//         }
-//     }
-//     return console.log("it is a prime number")
-// }
-// prime(8)
+// prime with recursion 
+// jo khud se divisible ho aur 1 se bhi and reminder uhnka 0 aaye
+let i;
+function prime(x){
+    if (x < 2)
+        return console.log("it is not a prime no")
+    for( i = 2 ; i < x ; i++){
+        if( x % i  === 0){
+            return console.log(" it is not a prime no")
+        }
+    }
+    return console.log("it is a prime number")
+}
+prime(8)
 
 // let y ;
 
@@ -101,43 +95,28 @@
 // i++
 // }
 
-
-// power
-
-// let number = 5;
-// let power = 3;
-//console.log(Math.pow(number, power))
-
 // fibonacci numbers
+//0+1=1,1+1=2,1+2=3,3+5=8,8+5=13,13+8=21...
+let num = 100;
+let x = 0;
+let y = 1;
+let fn = x+y;
+while (fn < num) {
+  console.log(fn);
+  fn = x+y;
+  x=y;
+  y=fn;
+}
 
-// let num = 100;
-// let x = 0;
-// let y = 1;
-// let fn = x+y;
-// while (fn < num) {
-//   //console.log(fn);
-//   fn = x+y;
-//   x=y;
-//   y=fn;
-// }
-
-
-// sort arrary
-
-// let roll = [2,5,1,40,70,3];
-// let res = roll.sort((a,b)=>{
-//   return a-b;
-// });
-
-
-// sort arrary
-
+// sort arrary - without sort method data.sort((a,b)=>{return a-b})
+// swap value
 let data = [2, 45, 23, 1];
 let newData;
 for (i = 0; i < data.length; i++) {
 for(j = i; j < data.length; j++) {
+  // condition check ki agar i > j se bda hai to temp store ho jaye newData m value
 if(data[i] > data[j]) {
-  //temp store karwa di
+  //temp store karwa di value
 newData = data[i];
 // i ki value j m swap kra di
 data[i] = data[j];
@@ -148,13 +127,12 @@ data[j] = newData;
 }
 console.log(data);
 
-//power
-
+//power - Math.pow(enterNumber,enterPower)
+// without Math.pow() and **
 let enterNumber = 5;
 let enterPower  = 4;
-let output = 1 ;
+let output = 1 ;// power jab bhi 0 ho to 1 ho jaye
 for (i = 0 ; i < enterPower ; i++){
  output = output*enterNumber;
 }
 console.log(output)
-
