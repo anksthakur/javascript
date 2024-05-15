@@ -12,6 +12,7 @@ let message = document.querySelector('.message');
 
 let gameEnd = false;
 
+//   Step 1
 // winning condition pattrens
 const winners = [
     [0,1,2],
@@ -24,6 +25,8 @@ const winners = [
     [2,4,6]
 ];
 
+
+//  Step 4
 // Function to display winner message
 const showWinner = (winner) => {
     message.innerText = `Congratulations ${winner}! You are the winner.`;
@@ -31,16 +34,21 @@ const showWinner = (winner) => {
     disableBox();
 }
 
+
+// Step 6
 // Function to display draw message
 const showDrawMessage = () => {
     message.innerText = "It's a draw!";
     message.classList.remove("hide");
     disableBox();
 }
+
+// Step 9
 const disableBox = () => {
     gameEnd = true;
 }
 
+//   Step 5
 // Function to check for a draw
 const checkDraw = () => {
     let draw = true;
@@ -57,6 +65,7 @@ const checkDraw = () => {
     }
 }
 
+//   Step 3
 // Function to check for a winner
 const checkWinner = () => {
     for (let winner of winners) {
@@ -64,7 +73,7 @@ const checkWinner = () => {
             // box wala arrary (indivudal index nikala) 0 1 2
             //console.log(winner[0],winner[1],winner[2])
             // element check krne ke ley konsi position pe hai // 0<div 1<div 2<div
-           // console.log(boxes[winner[0]],boxes[winner[1]],boxes[winner[2]])
+           //console.log(boxes[winner[0]],boxes[winner[1]],boxes[winner[2]])
             // value jo div ke andar hai , position 1 pe kya hai eg X ya O hai
             //console.log(boxes[winner[0]].innerText,boxes[winner[1]].innerText,boxes[winner[2]].innerText)
         let pos1 = boxes[winner[0]].innerText;
@@ -82,31 +91,36 @@ const checkWinner = () => {
     checkDraw(); 
 }
 
+//  Step 2
+// Step 7
 // Function to handle box click events
 const boxClick = (event) => {
-    // Check if the game has ended
+    // Check if the game has endeds
     if (!gameEnd) {
          // if the box r empty it will continues 
-        if (event.innerText === "") {
+        if (event.target.innerText === "") {
             if (turnX) {
-                event.innerText = "X";
-                event.classList.add("red-text");
+                event.target.innerText = "X";
+                event.target.classList.add("red-text");
             } else {
-                event.innerText = "O";
-                event.classList.add("green-text");
+                event.target.innerText = "O";
+                event.target.classList.add("green-text");
             }
-            // if X turn then it will switch to turn O and repeate it again and again
+            // if X turn completed then it will switch to turn O and repeate it again and again
             turnX = !turnX;
             checkWinner();
         }
     }
 };
 
+// Step 8
 // Event listeners for each boxes
 boxes.forEach((box) => {
     box.addEventListener("click", boxClick);
 });
 
+
+// Step 10
 // Event listener for the reset button
 resetButton.addEventListener("click", () => {
     boxes.forEach((box) => {
