@@ -1,16 +1,16 @@
-// Selecting all box using their class
-let boxes = document.querySelectorAll(".boxes");
+// Selecting all boxes using their class
+let boxes = document.querySelectorAll(".box");
 
 // Selecting the reset button by its id
 let resetButton = document.querySelector("#reset");
 
-// Variable turnX ki kiski turn hai, true for X and false for O
+// Variable to keep track of whose turn it is, true for X and false for O
 let turnX = true;
 
 // Selecting message elements
 let message = document.querySelector('.message');
 
-// winning condition pattrens
+// Array representing winning combinations
 const winners = [
     [0,1,2],
     [3,4,5],
@@ -51,13 +51,6 @@ const checkDraw = () => {
 // Function to check for a winner
 const checkWinner = () => {
     for (let winner of winners) {
-        //console.log(winner);
-            // box wala arrary (indivudal index nikala) 0 1 2
-            //console.log(winner[0],winner[1],winner[2])
-            // element check krne ke ley konsi position pe hai // 0<div 1<div 2<div
-           // console.log(boxes[winner[0]],boxes[winner[1]],boxes[winner[2]])
-            // value jo div ke andar hai , position 1 pe kya hai eg X ya O hai
-            //console.log(boxes[winner[0]].innerText,boxes[winner[1]].innerText,boxes[winner[2]].innerText)
         let pos1 = boxes[winner[0]].innerText;
         let pos2 = boxes[winner[1]].innerText;
         let pos3 = boxes[winner[2]].innerText;
@@ -67,11 +60,10 @@ const checkWinner = () => {
             return;
         }
     }
-    // draw check krne ke ley agar koi winner nhi hai to
-    checkDraw(); 
+    checkDraw(); // Check for draw if no winner is found
 }
 
-// Event listeners for each boxes
+// Event listeners for each box
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
         if (box.innerText === "") {
@@ -82,7 +74,7 @@ boxes.forEach((box) => {
                 box.innerText = "O";
                 box.classList.add("green-text");
             }
-            turnX = !turnX;
+            turnX = !turnX; // Toggle turn
             checkWinner();
         }
     });
@@ -92,5 +84,7 @@ boxes.forEach((box) => {
 resetButton.addEventListener("click", () => {
     boxes.forEach((box) => {
         box.innerText = "";
+        box.classList.remove("red-text", "green-text");
     });
+    message.classList.add("hide");
 });
