@@ -38,6 +38,7 @@ const showDrawMessage = () => {
 const checkDraw = () => {
     let draw = true;
     for (let box of boxes) {
+        // agar box empty hai to draw ko false kar dega aur loop se exit kar dega
         if (box.innerText === "") {
             draw = false;
             break;
@@ -61,12 +62,15 @@ const checkWinner = () => {
         let pos1 = boxes[winner[0]].innerText;
         let pos2 = boxes[winner[1]].innerText;
         let pos3 = boxes[winner[2]].innerText;
-
+// !== (if they r not empty) ===(if they all r equal)
         if (pos1 !== "" && pos1 === pos2 && pos2 === pos3) {
+            // agar ye sari condition match hoti hai to ek winner aa jayega
             showWinner(pos1);
+            // end kr dega loop ko
             return;
         }
     }
+    // agar ye winning condition match nhi kar pata to checkDraw fun ko call kr dega
     // draw check krne ke ley agar koi winner nhi hai to
     checkDraw(); 
 }
@@ -74,6 +78,7 @@ const checkWinner = () => {
 // Event listeners for each boxes
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
+        // if the box r empty it will continues 
         if (box.innerText === "") {
             if (turnX) {
                 box.innerText = "X";
@@ -82,6 +87,7 @@ boxes.forEach((box) => {
                 box.innerText = "O";
                 box.classList.add("green-text");
             }
+            // if X turn then it will switch to turn O and repeate it again and again
             turnX = !turnX;
             checkWinner();
         }
